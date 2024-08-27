@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: green;
+}
+
+.cardContainer {
+
+    height: 80vh;
+    width: 30vw;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+
+    padding: 60px;
+
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    gap: 20px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.formContainer {
+    // background-color: pink;
+    display: flex;
+    flex-direction: column;
+}
+
+.bodyCompositionInputs {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.bodyCompositionInputs input {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(211, 211, 211, 0.2);
+}
+
+.genderInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.genderOptions {
+    display: flex;
+    justify-content: space-around;
+    button {
+        width: 30%;
+        padding: 25px;
+        border: none;
+        border-radius: 15px;
+        background-color: lightgreen;
+    }
+}
+
+.hiddenSelectors {
+    display: none;
+}
