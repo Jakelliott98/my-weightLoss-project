@@ -10,13 +10,18 @@
     --background-colour: rgb(0, 162, 0);
     --main-colour: rgb(0, 162, 0);
     --secondary-colour: rgb(255, 200, 44);
-    --light-main-colour: rgb(134, 202, 134);
+    --light-main-colour: rgb(154, 213, 154);
     --text-colour: #1B2021;
+    --light-text-colour: rgba(27, 32, 33, 0.65);
     --button-colour: rgba(238, 238, 228, 0.4);
 
 
     --medium-space: 20px;
 }
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 
 body {
     display: flex;
@@ -29,9 +34,22 @@ body {
     color: var(--text-colour);
 }
 
-h1, p, label, button {
-    color: var(--text-colour);
+button {
+    cursor: pointer;
 }
+
+button, .inputContainer {
+    background-color: var(--button-colour);
+    border: none;
+    border-radius: 15px;
+    padding: 20px 15px;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* Layout and Display */
 
 .cardContainer {
 
@@ -47,18 +65,19 @@ h1, p, label, button {
     grid-template-rows: 1fr 5fr;
 }
 
+.pageNumber {
+    text-transform: uppercase;
+    color: var(--main-colour);
+    font-weight: 600;
+    font-size: 14px;
+}
+
 .heading {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: var(--medium-space);
-}
-.pageNumber {
-    text-transform: uppercase;
-    color: var(--main-colour);
-    font-weight: 600;
-    font-size: 14px;
 }
 
 .formContainer {
@@ -72,16 +91,35 @@ h1, p, label, button {
     flex-direction: column;
 }
 
-.bodyCompositionInputs input {
-    padding: 15px 10px;
-    border: none;
-    border-radius: 10px;
-    background-color: rgba(211, 211, 211, 0.2);
-    margin-bottom: 20px;
-}
-
 .bodyCompositionInputs label {
     margin-bottom: 10px;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.inputBox {
+    font-size: 16px;
+    flex-basis: 80%;
+    height: 100%;
+    background-color: transparent;
+    padding-left: 10px;
+}
+
+.inputContainer p {
+    flex-basis: 20%;
+    text-align: center;
+    color: var(--light-text-colour);
+}
+
+.inputContainer:focus-within {
+    outline: var(--main-colour) solid;
 }
 
 .genderOptions {
@@ -90,37 +128,31 @@ h1, p, label, button {
         
     button {
         width: 45%;
-        padding: 20px 15px;
-        border: none;
-        border-radius: 15px;
         font-size: 16px;
         text-transform: uppercase;
-        background-color: var(--button-colour);
         i {
             padding-right: 5px;
         }
     }
 }
 
+.genderOptions .active {
+    background-color: var(--light-main-colour);
+    outline: var(--main-colour) solid;
+}
+
 .progressButton {
-    padding: 20px 10px;
-    border: none;
-    border-radius: 10px;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 16px;
-    background-color: var(--button-colour);
-
 }
+
+.progressButton:hover {
+    background-color: var(--light-main-colour);
+    transition: 1.5s ease;
+}
+
 
 .hiddenSelectors {
     display: none;
 }
-
-
-/* 
-
-Add Hover & Active states to the button and genders
-Clean up the input field - hange ios setting, background, active border, text
-Clean CSS File
-

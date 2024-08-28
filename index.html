@@ -25,15 +25,23 @@
         <form class="formContainer">
             <section class="bodyCompositionInputs">
                 <label name="age" id="age">How old are you?</label>
-                <input type="number" max="120" min="18">
+                <div class="inputContainer">
+                <input class="inputBox" type="number" max="120" min="18">
+                </div>
                 <label for="weight">How much do you weigh?</label>
-                <input type="number" name="weight" id="wieght">
+                <div class="inputContainer">
+                <input class="inputBox" type="number" name="weight" id="wieght">
+                <p>kg</p>
+                </div>
                 <label for="height">How tall are you?</label>
-                <input type="number" name="height" id="height">
+                <div class="inputContainer">
+                <input class="inputBox" type="number" name="height" id="height">
+                <p>cm</p>
+                </div>
                 <label>What is your birth gender?</label>
                 <div class="genderOptions">
-                    <button><i class="fa-solid fa-person"></i>Male</button>
-                    <button><i class="fa-solid fa-person-dress"></i>Female</button>
+                    <button class="genderSelect active"><i class="fa-solid fa-person"></i>Male</button>
+                    <button class="genderSelect"><i class="fa-solid fa-person-dress"></i>Female</button>
                 </div>
                 <div class="hiddenSelectors">
                     <select id="male" name="male">Male</select>
