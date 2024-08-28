@@ -5,27 +5,46 @@
     box-sizing: border-box;
 }
 
+:root {
+
+    --background-colour: rgb(0, 162, 0);
+    --main-colour: rgb(0, 162, 0);
+    --secondary-colour: rgb(255, 200, 44);
+    --light-main-colour: rgb(134, 202, 134);
+    --text-colour: #1B2021;
+    --button-colour: rgba(238, 238, 228, 0.4);
+
+
+    --medium-space: 20px;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     height: 100vh;
-    background-color: green;
+    background-color: var(--background-colour);
+    font-family: poppins;
+    color: var(--text-colour);
+}
+
+h1, p, label, button {
+    color: var(--text-colour);
 }
 
 .cardContainer {
 
-    height: 80vh;
-    width: 30vw;
+    height: 85vh;
+    width: 35vw;
     background-color: white;
-    border: none;
+    border: 5px solid var(--secondary-colour);
     border-radius: 50px;
 
     padding: 60px;
 
     display: grid;
     grid-template-rows: 1fr 5fr;
-    gap: 20px;
 }
 
 .heading {
@@ -33,46 +52,74 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    margin-bottom: var(--medium-space);
+}
+.pageNumber {
+    text-transform: uppercase;
+    color: var(--main-colour);
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .formContainer {
-    // background-color: pink;
     display: flex;
     flex-direction: column;
+    gap: var(--medium-space);
 }
 
 .bodyCompositionInputs {
     display: flex;
     flex-direction: column;
-
-    margin-bottom: 20px;
 }
 
 .bodyCompositionInputs input {
-    padding: 10px;
+    padding: 15px 10px;
     border: none;
     border-radius: 10px;
     background-color: rgba(211, 211, 211, 0.2);
+    margin-bottom: 20px;
 }
 
-.genderInput {
-    display: flex;
-    flex-direction: column;
+.bodyCompositionInputs label {
+    margin-bottom: 10px;
 }
 
 .genderOptions {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+        
     button {
-        width: 30%;
-        padding: 25px;
+        width: 45%;
+        padding: 20px 15px;
         border: none;
         border-radius: 15px;
-        background-color: lightgreen;
+        font-size: 16px;
+        text-transform: uppercase;
+        background-color: var(--button-colour);
+        i {
+            padding-right: 5px;
+        }
     }
+}
+
+.progressButton {
+    padding: 20px 10px;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: var(--button-colour);
+
 }
 
 .hiddenSelectors {
     display: none;
 }
+
+
+/* 
+
+Add Hover & Active states to the button and genders
+Clean up the input field - hange ios setting, background, active border, text
+
