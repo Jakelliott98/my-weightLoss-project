@@ -152,7 +152,12 @@ input:focus {
     transition: 1.5s ease;
 }
 
+.page.active{
+    display: block;
+}
 
-.hiddenSelectors {
+
+
+.page {
     display: none;
 }

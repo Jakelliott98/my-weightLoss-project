@@ -6,6 +6,10 @@ let selectedGender = '';
 const maleButton = document.getElementById('maleChoice');
 const femaleButton = document.getElementById('femaleChoice');
 
+const page1 = document.getElementById('page1');
+const page2 = document.getElementById('page2');
+const page3 = document.getElementById('page3');
+
 let form = document.getElementById('userForm');
 
 form.addEventListener('submit', function(event){
@@ -51,4 +55,30 @@ femaleButton.addEventListener('click', function(){
     selectGender('female');
 });
 
-console.log(selectGender);
+
+
+function changePage(currentPage, nextPage){
+
+    if (currentPage) {
+        currentPage.classList.remove('active');
+    }
+
+    if (nextPage){
+        nextPage.classList.add('active');
+    }
+
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    changePage(page1, page1);
+
+    document.getElementById('nextPage1').addEventListener('click', () => {
+        changePage(page1, page2);
+    })
+
+    document.getElementById('nextPage2').addEventListener('click', () => {
+        changePage(page2, page3);
+    })
+
+})
