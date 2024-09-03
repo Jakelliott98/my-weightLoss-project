@@ -136,7 +136,7 @@ input:focus {
     }
 }
 
-.genderOptions .active {
+.genderSelect.active {
     background-color: var(--light-main-colour);
     outline: var(--main-colour) solid;
 }

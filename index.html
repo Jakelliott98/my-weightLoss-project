@@ -22,37 +22,45 @@
             <h1 class="title">Lorem ipsum dolor sit amet.</h1>
         </section>
 
-        <form class="formContainer">
+        <form class="formContainer" id="userForm">
             <section class="bodyCompositionInputs">
-                <label name="age" id="age">How old are you?</label>
+
+                <label name="age" for="age">How old are you?</label>
                 <div class="inputContainer">
-                <input class="inputBox" type="number" max="120" min="18">
+                <input class="inputBox" type="number" max="120" min="18" id="age">
                 </div>
-                <label for="weight">How much do you weigh?</label>
+                
+                <label for="weight">How much do you weight?</label>
                 <div class="inputContainer">
-                <input class="inputBox" type="number" name="weight" id="wieght">
+                <input class="inputBox" type="number" name="weight" id="weight">
                 <p>kg</p>
                 </div>
+                
                 <label for="height">How tall are you?</label>
                 <div class="inputContainer">
                 <input class="inputBox" type="number" name="height" id="height">
                 <p>cm</p>
                 </div>
+                
                 <label>What is your birth gender?</label>
-                <div class="genderOptions">
-                    <button class="genderSelect active"><i class="fa-solid fa-person"></i>Male</button>
-                    <button class="genderSelect"><i class="fa-solid fa-person-dress"></i>Female</button>
+                <div class="genderOptions" >
+                    <button id="maleChoice" class="genderSelect"><i class="fa-solid fa-person"></i>Male</button>
+                    <button id="femaleChoice" class="genderSelect active"><i class="fa-solid fa-person-dress"></i>Female</button>
                 </div>
+
+                <!--
                 <div class="hiddenSelectors">
                     <select id="male" name="male">Male</select>
                     <select id="female" name="female">Female</select>
                 </div>
+                -->
+
             </section>
             <button class="progressButton" >Next</button>
         </form>
 
 
     </div>
-    
+    <script src="script.js" ></script>
 </body>
 </html>
