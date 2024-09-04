@@ -145,6 +145,7 @@ input:focus {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 16px;
+    width: 100%;
 }
 
 .progressButton:hover {
@@ -152,11 +153,62 @@ input:focus {
     transition: 1.5s ease;
 }
 
-.page.active{
-    display: block;
+.activityChoice {
+    background-color: var(--button-colour);
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    height: 100px;
+}
+
+.activityChoice:hover {
+    i, h5 {
+        color: var(--main-colour);
+    }
+}
+
+.activeChoice {
+    background-color: var(--light-main-colour);
+    outline: var(--main-colour) solid 2px;
+}
+
+.activeChoice:hover {
+    i, h5{    
+        color: var(--text-colour);
+    }
+}
+
+.activityChoice i {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+}
+
+.textArea {
+    flex: 5;
+}
+
+.activityDescription {
+    font-size: 12px;
+}
+
+button, .inputContainer {
+    background-color: var(--button-colour);
+    border: none;
+    border-radius: 15px;
+    padding: 20px 15px;
 }
 
 
+.page.active{
+    display: block;
+}
 
 .page {
     display: none;

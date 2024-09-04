@@ -17,6 +17,8 @@
 
     <div class="cardContainer">
 
+        <!--Make sure to change active back over-->
+
         <div class="page active" id="page1">
             <section class="heading">
                 <p class="pageNumber">Page 1 of 3</p>
@@ -46,7 +48,7 @@
                     <label>What is your birth gender?</label>
                     <div class="genderOptions" >
                         <button id="maleChoice" class="genderSelect"><i class="fa-solid fa-person"></i>Male</button>
-                        <button id="femaleChoice" class="genderSelect active"><i class="fa-solid fa-person-dress"></i>Female</button>
+                        <button id="femaleChoice" class="genderSelect"><i class="fa-solid fa-person-dress"></i>Female</button>
                     </div>
                 </section>
                 <button class="progressButton" id="nextPage1">Next</button>
@@ -55,31 +57,45 @@
 
         <div class="page" id="page2">
 
-            <section class="heading">
-                    <p class="pageNumber">Page 1 of 3</p>
+                <section class="heading">
+                    <p class="pageNumber">Page 2 of 3</p>
                     <h1 class="title">Lorem ipsum dolor sit amet.</h1>
                 </section>
 
                 <section class="#">
-                <div>
-                    <h5>Lorem ipsum dolor sit.</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente aperiam omnis reiciendis nulla recusandae perferendis.</p>
-                </div>
 
-                <div>
-                    <h5>Lorem ipsum dolor sit.</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente aperiam omnis reiciendis nulla recusandae perferendis.</p>
-                </div>
+                    <div class="activityChoice" id="sedentary">
+                        <i class="fa-solid fa-couch"></i>
+                        <div class="textArea">
+                            <h5>Sedentary</h5>
+                            <p class="activityDescription">No regular exercise or physical activity of any kind</p>
+                        </div>
+                    </div>
 
-                <div>
-                    <h5>Lorem ipsum dolor sit.</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente aperiam omnis reiciendis nulla recusandae perferendis.</p>
-                </div>
+                    <div class="activityChoice" id="lightActivity">
+                        <i class="fa-solid fa-person-walking"></i>
+                        <div class="textArea">
+                            <h5>Lightly Active</h5>
+                            <p class="activityDescription">Regular activity or exercise consisting of ≤ 149 minutes moderate activity or ≤ 74 minutes of vigorous activity per week</p>
+                        </div>
+                    </div>
 
-                <div>
-                    <h5>Lorem ipsum dolor sit.</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente aperiam omnis reiciendis nulla recusandae perferendis.</p>
-                </div>
+                    <div class="activityChoice" id="moderatelyActive">
+                        <i class="fa-solid fa-person-biking"></i>
+                        <div class="textArea">
+                            <h5>Active</h5>
+                            <p class="activityDescription">Regular activity or exercise consisting of ≥ 150 minutes but ≤ 299 minutes moderate activity or ≥ 75 minutes but ≤ 149 minutes of vigorous activity per week	</p>
+                        </div>
+                    </div>
+
+                        <div class="activityChoice" id="veryActive">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <div class="textArea">
+                                <h5>Very Active </h5>
+                                <p class="activityDescription">Regular activity or exercise consisting of ≥ 300 minutes moderate activity or ≥ 150 minutes vigorous activity per week</p>
+                            </div>
+                        </div>
+
                 </section>
 
                 <button class="progressButton" id="nextPage2">Next</button>
@@ -88,6 +104,17 @@
         </div>
 
         <div class="page" id="page3">
+
+            <section class="heading">
+                <p class="pageNumber">Page 3 of 3</p>
+                <h1 class="title">Your Results!</h1>
+            </section>
+
+            <section class="results">
+
+            </section>
+
+
             <p>Results</p>
         </div>
 
