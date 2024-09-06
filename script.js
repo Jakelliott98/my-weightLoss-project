@@ -1,13 +1,8 @@
 
-let userData = [];
 let selectedGender = '';
 let selectedActivity = '';
+let activityFactor ='';
 let usersBmr = '';
-
-
-let bmrWeight = userData.weight;
-let bmrHeight = userData.height;
-let bmrAge = userData.age;
 
 /* Set the different activity for calucation*/
 
@@ -28,9 +23,9 @@ let form = document.getElementById('userForm');
 form.addEventListener('submit', function(event){
     event.preventDefault();
 
-    const age = document.getElementById('age').value ;
-    const weight = document.getElementById('weight').value ;
-    const height = document.getElementById('height').value ;
+    const age = parseInt(document.getElementById('age').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value);
 
     const user = {
         age: age,
@@ -39,12 +34,11 @@ form.addEventListener('submit', function(event){
         gender: selectedGender,
     };
 
-    userData.push(user);
-
-    console.log(userData);
+    const bmr = calculateBmr(user.weight, user.height, user.age, user.gender);
+    usersBmr = bmr;
+    console.log("BMR = " + bmr);
 
 })
-
 
 function selectGender(gender){
 
@@ -68,6 +62,25 @@ femaleButton.addEventListener('click', function(){
     selectGender('female');
 });
 
+
+/* BMR Function */
+
+function calculateBmr(weight, height, age, gender){
+    if (gender === 'male'){
+        return (10 * weight) + (6.25 * height) + (5 * age) + 5;
+    } else if (gender === selectedGender){
+        return (10 * weight) + (6.25 * height) + (5 * age) - 161;
+    }
+
+};
+
+/* Energy Expenditure Function 
+
+function calculateTdee(bmr, activityFactor){
+    DailyEnergyExpenditure = bmr * activityFactor
+}
+
+*/
 
 function activitySelected(activity){
 
@@ -104,15 +117,6 @@ veryActive.addEventListener('click', function(){
     activitySelected('veryActive');
 });
 
-/* Function not working - struggling to connect to the userData to input into the funciton*/
-
-function calculateBmr(weight, height, age){
-
-    bmr = (10 * weight) + (6.25 * height) + (5 * age) + 5;
-    return bmr;
-};
-
-calculateBmr(bmrWeight, bmrHeight, bmrAge);
 
 function changePage(currentPage, nextPage){
 
