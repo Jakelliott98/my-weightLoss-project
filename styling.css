@@ -213,3 +213,47 @@ button, .inputContainer {
 .page {
     display: none;
 }
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-space);
+
+}
+
+.resultsBar {
+    width: 100%;
+    border: solid var(--main-colour) 5px;
+    padding: 15px;
+
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.resultValueSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.resultTitle {
+
+}
+
+.resultValue {
+    font-weight: 700;
+    flex: 2;
+    text-align: center;
+}
+
+.resultsUnit {
+    flex: 1;
+    text-align: right;
+    color: var(--light-text-colour);
+}
+
+.rmrResults {
+    margin-top: var(--medium-space);
+}

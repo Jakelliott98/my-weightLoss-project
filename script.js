@@ -3,6 +3,8 @@ let selectedGender = '';
 let selectedActivity = '';
 let activityFactor ='';
 let usersBmr = '';
+let usersTdee ='';
+let calorieTarget ='';
 
 /* Set the different activity for calucation*/
 
@@ -17,6 +19,8 @@ const femaleButton = document.getElementById('femaleChoice');
 const page1 = document.getElementById('page1');
 const page2 = document.getElementById('page2');
 const page3 = document.getElementById('page3');
+
+const progressPage2 = document.getElementById('nextPage2');
 
 let form = document.getElementById('userForm');
 
@@ -37,6 +41,8 @@ form.addEventListener('submit', function(event){
     const bmr = calculateBmr(user.weight, user.height, user.age, user.gender);
     usersBmr = bmr;
     console.log("BMR = " + bmr);
+
+    document.getElementById('rmrResult').textContent = usersBmr;
 
 })
 
@@ -67,20 +73,12 @@ femaleButton.addEventListener('click', function(){
 
 function calculateBmr(weight, height, age, gender){
     if (gender === 'male'){
-        return (10 * weight) + (6.25 * height) + (5 * age) + 5;
-    } else if (gender === selectedGender){
-        return (10 * weight) + (6.25 * height) + (5 * age) - 161;
+        return (10 * weight) + (6.25 * height) - (5 * age) + 5;
+    } else if (gender === 'female'){
+        return (10 * weight) + (6.25 * height) - (5 * age) - 161;
     }
-
 };
 
-/* Energy Expenditure Function 
-
-function calculateTdee(bmr, activityFactor){
-    DailyEnergyExpenditure = bmr * activityFactor
-}
-
-*/
 
 function activitySelected(activity){
 
@@ -96,7 +94,7 @@ function activitySelected(activity){
         lightActivity.classList.add('activeChoice');
         selectedActivity = 'lightActivity';
     } else if (activity === 'moderatelyActive'){
-        modActive.classList.add('activeChoice');
+        moderatelyActive.classList.add('activeChoice');
         selectedActivity = 'moderatelyActive';
     } else if (activity === 'veryActive'){
         veryActive.classList.add('activeChoice');
@@ -117,6 +115,44 @@ veryActive.addEventListener('click', function(){
     activitySelected('veryActive');
 });
 
+function activityFactorCalc(activityLevel){
+    switch (activityLevel){
+
+        case 'sedentary':
+            activityFactor = 1.25;
+            break ;
+        case 'lightActivity':
+            activityFactor = 1.375;
+            break ;
+        case 'moderatelyActive':
+            activityFactor = 1.55;
+            break ;
+        case 'veryActive':
+            activityFactor = 1.725;
+            break ;
+
+    }
+}
+
+function calculateTdee(bmr, activityFactor){
+
+    DailyEnergyExpenditure = bmr * activityFactor;
+    usersTdee = DailyEnergyExpenditure.toFixed(2);
+    calorieTarget = (usersTdee - 600).toFixed(2);
+
+    if (usersTdee){
+        document.getElementById('tdeeResult').textContent = usersTdee;
+    } else {
+        document.getElementById('tdeeResult').textContent = 'Error';
+    }
+    
+    if (calorieTarget){
+        document.getElementById('calorieTarget').textContent = calorieTarget;
+    } else {
+        document.getElementById('calorieTarget').textContent = "Error";
+    };
+}
+
 
 function changePage(currentPage, nextPage){
 
@@ -130,6 +166,11 @@ function changePage(currentPage, nextPage){
 
 }
 
+progressPage2.addEventListener('click', function(){
+    activityFactorCalc(selectedActivity);
+    calculateTdee(usersBmr, activityFactor);
+})
+
 document.addEventListener('DOMContentLoaded', () => {
     changePage(page1, page1);
 
@@ -142,4 +183,3 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 })
-
