@@ -1,3 +1,5 @@
+/* ---------- TEXT ---------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,8 +17,21 @@
     --light-text-colour: rgba(27, 32, 33, 0.65);
     --button-colour: rgba(238, 238, 228, 0.4);
 
+    --xSmall-space: 5px;
+    --small-space: 10px;
+    --medium-space: 15px;
+    --large-space: 20px;
+    --Xlarge-space: 30px;
 
-    --medium-space: 20px;
+    --fontSize-Xsmall: 12px;
+    --fontSize-small: 14px;
+    --fontSize-medium: 16px;
+    --fontSize-large: 20px;
+
+    --light-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
+    --medium-shadow: 0px 2px 0px rgba(57, 57, 57, 0.3);
+    --dark-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.3);
+
 }
 
 input[type=number]::-webkit-inner-spin-button {
@@ -34,177 +49,27 @@ body {
     color: var(--text-colour);
 }
 
-button {
-    cursor: pointer;
-}
-
-button, .inputContainer {
-    background-color: var(--button-colour);
-    border: none;
-    border-radius: 15px;
-    padding: 20px 15px;
-}
-
-input:focus {
-    outline: none;
-}
-
-/* Layout and Display */
+/* ---------- LAYOUT ---------- */
 
 .cardContainer {
-
     height: 85vh;
     width: 35vw;
     background-color: white;
     border: 5px solid var(--secondary-colour);
     border-radius: 50px;
-
     padding: 60px;
-
     display: grid;
     grid-template-rows: 1fr 5fr;
+    box-shadow: var(--dark-shadow);
+    font-size: var(--fontSize-medium);
 }
 
 .pageNumber {
     text-transform: uppercase;
     color: var(--main-colour);
     font-weight: 600;
-    font-size: 14px;
+    font-size: var(--fontSize-small);
 }
-
-.heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--medium-space);
-}
-
-.formContainer {
-    display: flex;
-    flex-direction: column;
-    gap: var(--medium-space);
-}
-
-.bodyCompositionInputs {
-    display: flex;
-    flex-direction: column;
-}
-
-.bodyCompositionInputs label {
-    margin-bottom: 10px;
-}
-
-.inputContainer {
-    display: flex;
-    align-items: center;
-    justify-content: stretch;
-    width: 100%;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.inputBox {
-    font-size: 16px;
-    flex-basis: 80%;
-    height: 100%;
-    background-color: transparent;
-    padding-left: 10px;
-}
-
-.inputContainer p {
-    flex-basis: 20%;
-    text-align: center;
-    color: var(--light-text-colour);
-}
-
-.inputContainer:focus-within {
-    outline: var(--main-colour) solid;
-}
-
-.genderOptions {
-    display: flex;
-    justify-content: space-between;
-        
-    button {
-        width: 45%;
-        font-size: 16px;
-        text-transform: uppercase;
-        i {
-            padding-right: 5px;
-        }
-    }
-}
-
-.genderSelect.active {
-    background-color: var(--light-main-colour);
-    outline: var(--main-colour) solid;
-}
-
-.progressButton {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 16px;
-    width: 100%;
-}
-
-.progressButton:hover {
-    background-color: var(--light-main-colour);
-    transition: 1.5s ease;
-}
-
-.activityChoice {
-    background-color: var(--button-colour);
-    border: none;
-    border-radius: 15px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    cursor: pointer;
-    height: 100px;
-}
-
-.activityChoice:hover {
-    i, h5 {
-        color: var(--main-colour);
-    }
-}
-
-.activeChoice {
-    background-color: var(--light-main-colour);
-    outline: var(--main-colour) solid 2px;
-}
-
-.activeChoice:hover {
-    i, h5{    
-        color: var(--text-colour);
-    }
-}
-
-.activityChoice i {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        font-size: 20px;
-}
-
-.textArea {
-    flex: 5;
-}
-
-.activityDescription {
-    font-size: 12px;
-}
-
-button, .inputContainer {
-    background-color: var(--button-colour);
-    border: none;
-    border-radius: 15px;
-    padding: 20px 15px;
-}
-
 
 .page.active{
     display: block;
@@ -214,36 +79,152 @@ button, .inputContainer {
     display: none;
 }
 
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--large-space);
+}
+
+/* ---------- FORMS ---------- */
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large-space);
+}
+
+/* ----- PAGE 1 ----- */
+
+.bodyCompositionInputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.bodyCompositionInputs label {
+    margin-bottom: var(--small-space);
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    width: 100%;
+    margin-bottom: var(--small-space);
+    box-shadow: var(--light-shadow);
+}
+
+input:focus {
+    outline: none;
+}
+
+.inputContainer:focus-within {
+    outline: var(--main-colour) solid;
+}
+
+.inputBox {
+    flex-basis: 80%;
+    height: 100%;
+    background-color: transparent;
+    padding-left: var(--small-space);
+}
+
+.inputContainer p {
+    flex-basis: 20%;
+    text-align: center;
+    color: var(--light-text-colour);
+}
+
+.genderOptions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.genderSelect.active {
+    background-color: var(--light-main-colour);
+    outline: var(--main-colour) solid;
+}
+
+/* ----- PAGE 2 ----- */
+
+.activityChoice {
+    background-color: var(--button-colour);
+    border: none;
+    border-radius: var(--medium-space);
+    padding: var(--small-space);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--small-space);
+    cursor: pointer;
+    height: 100px;
+    box-shadow: var(--light-shadow);
+}
+
+.activityChoice:hover i, .activityChoice:hover h5{
+        color: var(--main-colour);
+}
+
+.activityChoice:active {
+    box-shadow: var(--medium-shadow); 
+    transform: translateY(2px); 
+}
+
+.activeChoice {
+    background-color: var(--light-main-colour);
+    outline: var(--main-colour) solid 2px;
+}
+
+.activeChoice:hover i, .activeChoice:hover h5{
+        color: var(--text-colour);
+}
+
+.activityChoice i {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-size: var(--fontSize-large);
+}
+
+.textArea {
+    flex: 5;
+}
+
+.activityDescription {
+    font-size: var(--fontSize-Xsmall);
+}
+
+/* ----- PAGE 3 ----- */
+
 .results {
     display: flex;
     flex-direction: column;
-    gap: var(--medium-space);
-
+    gap: var(--large-space);
 }
 
 .resultsBar {
     width: 100%;
-    border: solid var(--main-colour) 5px;
-    padding: 15px;
-
-    border-radius: 10px;
+    padding: var(--medium-space);
+    box-shadow: var(--light-shadow);
+    border-radius: var(--small-space);
     display: flex;
     flex-direction: column;
+    background-color: var(--button-colour);
 }
 
 .resultValueSection {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: var(--medium-space);
 }
 
 .resultTitle {
-
+    font-weight: 500;
 }
 
 .resultValue {
-    font-weight: 700;
     flex: 2;
     text-align: center;
 }
@@ -255,5 +236,67 @@ button, .inputContainer {
 }
 
 .rmrResults {
-    margin-top: var(--medium-space);
+    margin-top: var(--large-space);
 }
+
+/* ---------- BUTTONS ---------- */
+
+button {
+    cursor: pointer;
+    font-size: var(--fontSize-medium);
+}
+
+button, .inputContainer {
+    background-color: var(--button-colour);
+    border: none;
+    border-radius: var(--medium-space);
+    padding: var(--large-space) var(--medium-space);
+}
+
+.progressButton {
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+    box-shadow: var(--medium-shadow);
+    transition: all 0.1s ease-in-out;
+}
+
+.progressButton:hover {
+    background-color: var(--light-main-colour);
+}
+
+.progressButton:active {
+    transform: translateY(3px);  
+}
+
+button, .inputContainer {
+    background-color: var(--button-colour);
+    border: none;
+    border-radius: var(--medium-space);
+    padding: var(--large-space) var(--medium-space);
+}
+
+.genderOptions button {
+    width: 45%;
+    box-shadow: var(--light-shadow);
+    transition: all 0.1s ease-in-out; 
+}
+
+.genderOptions button i {
+    padding-right: var(--xSmall-space);
+}
+
+.genderOptions button:active {
+    box-shadow: var(--medium-shadow);
+    transform: translateY(3px);
+}
+
+/* ---------- SPECIFIC COMPONENTS ---------- */
+
+
+
+/* ---------- MEDIA QUERIES ---------- */
+
+
+
+/* ---------- END ---------- */

@@ -23,12 +23,11 @@
 
 -->
 
-
 <body>
 
     <div class="cardContainer">
 
-        <!--Make sure to change active back over-->
+<!--Page 1-->
 
         <div class="page active" id="page1">
             <section class="heading">
@@ -58,13 +57,15 @@
                     
                     <label>What is your birth gender?</label>
                     <div class="genderOptions" >
-                        <button id="maleChoice" class="genderSelect"><i class="fa-solid fa-person"></i>Male</button>
-                        <button id="femaleChoice" class="genderSelect"><i class="fa-solid fa-person-dress"></i>Female</button>
+                        <button type="button" id="maleChoice" class="genderSelect"><i class="fa-solid fa-person"></i>Male</button>
+                        <button type="button" id="femaleChoice" class="genderSelect"><i class="fa-solid fa-person-dress"></i>Female</button>
                     </div>
                 </section>
-                <button class="progressButton" id="nextPage1">Next</button>
+                <button type="submit" class="progressButton" id="nextPage1">Next</button>
             </form>
         </div>
+
+<!--Page 2-->
 
         <div class="page" id="page2">
 
@@ -109,10 +110,11 @@
 
                 </section>
 
-                <button class="progressButton" id="nextPage2">Next</button>
+                <button class="progressButton" id="nextPage2">Calculate</button>
 
-            </section>
         </div>
+
+<!--Page 3-->
 
         <div class="page" id="page3">
 
@@ -147,7 +149,7 @@
                     </div>
                 </div>
 
-                <button class="progressButton" id="nextPage1">Next</button>
+                <button class="progressButton" id="nextPage1">Calories</button>
 
             </section>
 
@@ -156,5 +158,6 @@
     <script src="script.js" ></script>
 
     </div>
+
 </body>
 </html>

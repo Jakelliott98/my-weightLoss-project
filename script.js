@@ -140,17 +140,9 @@ function calculateTdee(bmr, activityFactor){
     usersTdee = DailyEnergyExpenditure.toFixed(2);
     calorieTarget = (usersTdee - 600).toFixed(2);
 
-    if (usersTdee){
         document.getElementById('tdeeResult').textContent = usersTdee;
-    } else {
-        document.getElementById('tdeeResult').textContent = 'Error';
-    }
-    
-    if (calorieTarget){
         document.getElementById('calorieTarget').textContent = calorieTarget;
-    } else {
-        document.getElementById('calorieTarget').textContent = "Error";
-    };
+
 }
 
 
