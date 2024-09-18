@@ -14,15 +14,6 @@
 
 </head>
 
-<!--
-
-2. Make the CSS layout responsive {Grow in height when screen shrinks} 
-4. Animations for the next button
-5. Fill in the titles
-6. Required for the pages 1 & 2
-
--->
-
 <body>
 
     <div class="cardContainer">
@@ -32,7 +23,7 @@
         <div class="page active" id="page1">
             <section class="heading">
                 <p class="pageNumber">Page 1 of 3</p>
-                <h1 class="title">Fill in your body composition!</h1>
+                <h1 class="title">Enter your body composition!</h1>
             </section>
 
             <form class="formContainer" id="userForm">
@@ -43,7 +34,7 @@
                     <input class="inputBox" type="number" max="120" min="18" id="age">
                     </div>
                     
-                    <label for="weight">How much do you weight?</label>
+                    <label for="weight">What's your current weight?</label>
                     <div class="inputContainer">
                     <input class="inputBox" type="number" name="weight" id="weight">
                     <p>kg</p>
@@ -55,14 +46,16 @@
                     <p>cm</p>
                     </div>
                     
-                    <label>What is your birth gender?</label>
+                    <label>What's your birth gender?</label>
                     <div class="genderOptions" >
                         <button type="button" id="maleChoice" class="genderSelect"><i class="fa-solid fa-person"></i>Male</button>
                         <button type="button" id="femaleChoice" class="genderSelect"><i class="fa-solid fa-person-dress"></i>Female</button>
                     </div>
                 </section>
-                <button type="submit" class="progressButton" id="nextPage1">Next</button>
             </form>
+
+            <button type="submit" class="progressButton" id="nextPage1">Proceed</button>
+
         </div>
 
 <!--Page 2-->
@@ -71,7 +64,7 @@
 
                 <section class="heading">
                     <p class="pageNumber">Page 2 of 3</p>
-                    <h1 class="title">Lorem ipsum dolor sit amet.</h1>
+                    <h1 class="title">How active are you?</h1>
                 </section>
 
                 <section class="#">
@@ -120,7 +113,7 @@
 
             <section class="heading">
                 <p class="pageNumber">Page 3 of 3</p>
-                <h1 class="title">Your Results!</h1>
+                <h1 class="title">Your results!</h1>
             </section>
 
             <section class="results">
@@ -149,7 +142,6 @@
                     </div>
                 </div>
 
-                <button class="progressButton" id="nextPage1">Calories</button>
 
             </section>
 

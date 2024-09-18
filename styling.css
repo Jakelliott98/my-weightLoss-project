@@ -45,7 +45,7 @@ body {
     flex-wrap: wrap;
     height: 100vh;
     background-color: var(--background-colour);
-    font-family: poppins;
+    font-family: poppins, Verdana, Geneva, Tahoma, sans-serif;
     color: var(--text-colour);
 }
 
@@ -58,8 +58,6 @@ body {
     border: 5px solid var(--secondary-colour);
     border-radius: 50px;
     padding: 60px;
-    display: grid;
-    grid-template-rows: 1fr;
     box-shadow: var(--dark-shadow);
     font-size: var(--fontSize-medium);
 }
@@ -72,7 +70,11 @@ body {
 }
 
 .page.active{
-    display: block;
+    display: grid;
+    grid-template:  "header" 75px
+                    "main" 450px
+                    "button" 75px / 100%;
+    align-items: center;
 }
 
 .page {
@@ -85,6 +87,9 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: var(--large-space);
+    grid-area: header;
+    text-align: center;
+    line-height: 1.5;
 }
 
 /* ---------- FORMS ---------- */
@@ -100,6 +105,8 @@ body {
 .bodyCompositionInputs {
     display: flex;
     flex-direction: column;
+    grid-area: main;
+
 }
 
 .bodyCompositionInputs label {
@@ -111,7 +118,7 @@ body {
     align-items: center;
     justify-content: stretch;
     width: 100%;
-    margin-bottom: var(--small-space);
+    margin-bottom: var(--large-space);
     box-shadow: var(--light-shadow);
 }
 
@@ -160,10 +167,11 @@ input:focus {
     cursor: pointer;
     height: 100px;
     box-shadow: var(--light-shadow);
+    grid-area: main;
 }
 
 .activityChoice:hover i, .activityChoice:hover h5{
-        color: var(--main-colour);
+    color: var(--main-colour);
 }
 
 .activityChoice:active {
@@ -177,7 +185,7 @@ input:focus {
 }
 
 .activeChoice:hover i, .activeChoice:hover h5{
-        color: var(--text-colour);
+    color: var(--text-colour);
 }
 
 .activityChoice i {
@@ -201,6 +209,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     gap: var(--large-space);
+    grid-area: main;
 }
 
 .resultsBar {
@@ -259,7 +268,10 @@ button, .inputContainer {
     width: 100%;
     box-shadow: var(--medium-shadow);
     transition: all 0.1s ease-in-out;
+    grid-area: button;
 }
+
+
 
 .progressButton:hover {
     background-color: var(--light-main-colour);
