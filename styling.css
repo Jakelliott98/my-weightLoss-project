@@ -42,7 +42,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     height: 100vh;
     background-color: var(--background-colour);
     font-family: poppins, Verdana, Geneva, Tahoma, sans-serif;
@@ -52,7 +51,6 @@ body {
 /* ---------- LAYOUT ---------- */
 
 .cardContainer {
-    min-height: 85vh;
     width: 480px;
     background-color: white;
     border: 5px solid var(--secondary-colour);
@@ -71,12 +69,10 @@ body {
 
 .page.active{
     display: grid;
-    grid-template:  
-        "header" 95px
-        "main" 450px
-        "button" 75px 
-        / 100%;
-    align-items: center;
+    grid-template-rows: auto 1fr auto;
+    align-content: center;
+    justify-content: center;
+    gap: var(--large-space);
 }
 
 .page {
@@ -84,7 +80,7 @@ body {
 }
 
 .heading {
-    grid-area: header;
+    grid-row: 1;
     text-align: center;
     line-height: 1.5;
 }
@@ -96,7 +92,7 @@ body {
 .bodyCompositionInputs {
     display: flex;
     flex-direction: column;
-    grid-area: main;
+    grid-row: 2;
 }
 
 
@@ -170,11 +166,10 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--small-space);
+    margin-bottom: var(--medium-space);
     cursor: pointer;
-    height: 100px;
     box-shadow: var(--light-shadow);
-    grid-area: main;
+    grid-row: 2;
 }
 
 .activityChoice:hover i, .activityChoice:hover h5{
@@ -215,44 +210,47 @@ input:focus {
 .results {
     display: flex;
     flex-direction: column;
-    gap: var(--large-space);
-    grid-area: main;
+    gap: var(--medium-space);
+    grid-row: 2;
 }
 
 .resultsBar {
     width: 100%;
-    padding: var(--medium-space);
+    padding: var(--large-space) var(--medium-space);
     box-shadow: var(--light-shadow);
     border-radius: var(--small-space);
     display: flex;
     flex-direction: column;
+    gap: var(--small-space);
     background-color: var(--button-colour);
 }
 
 .resultValueSection {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    padding: var(--medium-space);
+    gap: var(--small-space);
 }
 
 .resultTitle {
-    font-weight: 500;
+    text-align: center;
+    color: var(--light-text-colour);
+    text-align: left;
 }
 
 .resultValue {
-    flex: 2;
-    text-align: center;
+    text-align: left;
+    font-weight: bold;
+}
+
+.resultsBar i {
+    font-size: 2rem;
 }
 
 .resultsUnit {
-    flex: 1;
-    text-align: right;
+    text-align: left;
     color: var(--light-text-colour);
-}
-
-.rmrResults {
-    margin-top: var(--large-space);
+    font-size: var(--fontSize-small);
 }
 
 /* ---------- BUTTONS ---------- */
@@ -275,10 +273,8 @@ button, .inputContainer {
     width: 100%;
     box-shadow: var(--medium-shadow);
     transition: all 0.1s ease-in-out;
-    grid-area: button;
+    grid-row: 3;
 }
-
-
 
 .progressButton:hover {
     background-color: var(--light-main-colour);
