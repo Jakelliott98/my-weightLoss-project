@@ -24,7 +24,7 @@ const progressPage2 = document.getElementById('nextPage2');
 
 let form = document.getElementById('userForm');
 
-form.addEventListener('submit', function(event){
+nextPage1.addEventListener('click', function(event){
     event.preventDefault();
 
     const age = parseInt(document.getElementById('age').value);
@@ -175,3 +175,4 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 })
+
